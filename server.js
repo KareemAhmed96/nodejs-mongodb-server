@@ -6,7 +6,7 @@ const app = express();
 const bodyParserJson = bodyParser.json();
 
 
-mongoClient.connect("mongodb://localhost:27017",function(err,client){
+mongoClient.connect("mongodb+srv://admin:admin@cluster0.fc0st.mongodb.net/",function(err,client){
     app.db = client.db("SchoolSystem");
 });
 
@@ -98,4 +98,5 @@ app.get("/api/student/read/:id",function(req,res){
 const port =  process.env.PORT
 console.log(port)
 
-app.listen(8080);
+// app.listen(8080);
+app.listen(port);
